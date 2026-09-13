@@ -107,9 +107,14 @@ Both test suites and their saved Python fixtures ship with the Go module:
 Normal tests do not require Python, another checkout, or a local replacement.
 
 ```sh
-go test -mod=readonly ./...
+ZONEINFO="$(go env GOROOT)/lib/time/zoneinfo.zip" go test -mod=readonly ./...
 go vet -mod=readonly ./...
 ```
+
+CI selects Go's bundled timezone database for the reference tests. Some Linux
+system databases use rearguard DST flags for Dublin instead of the negative-DST
+flags in the Python reference. This test environment setting does not change
+runtime timezone selection, fixture expectations, or the published v2.9.1 tag.
 
 Reference regeneration is opt-in and requires CPython 3.14.6 plus the packages
 in [tools/python-reference/requirements.txt](tools/python-reference/requirements.txt):

@@ -27,6 +27,9 @@ jobs:
         with:
           go-version: ${{ matrix.go }}
           cache: false
+      - name: Use the toolchain timezone database
+        shell: bash
+        run: echo "ZONEINFO=$(go env GOROOT)/lib/time/zoneinfo.zip" >> "$GITHUB_ENV"
       - run: go test -mod=readonly -count=1 -v ./...
       - run: go vet -mod=readonly ./...
       - run: go mod tidy -diff
