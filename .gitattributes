@@ -2,5 +2,8 @@
 *.go text eol=lf
 *.py text eol=lf
 /parser/reference.json -text
+/parser/context-reference.json -text
 /relativedelta/reference.json -text
+/compat/datetime/*.json -text
+/compat/datetime/LICENSE-CPYTHON.txt -text
 /LICENSE -text
