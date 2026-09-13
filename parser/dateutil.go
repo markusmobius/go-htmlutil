@@ -15,6 +15,15 @@ type Result struct {
 	Time   time.Time
 	Aware  bool
 	Offset time.Duration
+	Fold   bool
+}
+
+type LocalTimezone struct {
+	StandardName   string
+	DaylightName   string
+	StandardOffset int
+	DaylightOffset int
+	IsDST          func(time.Time) bool
 }
 
 func (result Result) Instant() time.Time {
@@ -708,6 +717,21 @@ func parseTokens(input string, parserYear int) (parserResult, error) {
 }
 
 func Parse(input string, defaultTime time.Time, parserYear int) (Result, error) {
+	location := defaultTime.Location()
+	standardName, standardOffset := time.Date(defaultTime.Year(), 1, 1, 0, 0, 0, 0, location).Zone()
+	daylightName, daylightOffset := time.Date(defaultTime.Year(), 7, 1, 0, 0, 0, 0, location).Zone()
+	if standardOffset > daylightOffset {
+		standardName, daylightName = daylightName, standardName
+		standardOffset, daylightOffset = daylightOffset, standardOffset
+	}
+	return ParseWithLocalTimezone(input, defaultTime, parserYear, LocalTimezone{
+		StandardName: standardName, DaylightName: daylightName,
+		StandardOffset: standardOffset, DaylightOffset: daylightOffset,
+		IsDST: func(instant time.Time) bool { return instant.In(location).IsDST() },
+	}, false)
+}
+
+func ParseWithLocalTimezone(input string, defaultTime time.Time, parserYear int, local LocalTimezone, defaultFold bool) (Result, error) {
 	parsed, err := parseTokens(input, parserYear)
 	if err != nil {
 		return Result{}, err
@@ -729,52 +753,57 @@ func Parse(input string, defaultTime time.Time, parserYear int) (Result, error) 
 		return Result{}, ErrParse
 	}
 	wall := time.Date(values[0], time.Month(values[1]), values[2], values[3], values[4], values[5], values[6]*1000, time.UTC)
+	fold := defaultFold
 	if parsed.weekday >= 0 && parsed.day <= 0 {
+		fold = false
 		weekday := (int(wall.Weekday()) + 6) % 7
 		wall = wall.AddDate(0, 0, (parsed.weekday-weekday+7)%7)
 		if wall.Year() > 9999 {
 			return Result{}, ErrParse
 		}
 	}
-	location := defaultTime.Location()
 	aware := false
 	offset := 0
-	if parsed.zoneName != "" {
-		winterName, _ := time.Date(parserYear, 1, 1, 0, 0, 0, 0, location).Zone()
-		summerName, _ := time.Date(parserYear, 7, 1, 0, 0, 0, 0, location).Zone()
-		if parsed.zoneName == winterName || parsed.zoneName == summerName {
-			local := time.Date(wall.Year(), wall.Month(), wall.Day(), wall.Hour(), wall.Minute(), wall.Second(), wall.Nanosecond(), location)
-			localName, localOffset := local.Zone()
-			if localName != parsed.zoneName {
-				_, otherOffset := local.Add(24 * time.Hour).Zone()
-				folded := local.Add(time.Duration(localOffset-otherOffset) * time.Second)
-				if name, _ := folded.Zone(); name == parsed.zoneName && folded.Hour() == wall.Hour() && folded.Day() == wall.Day() {
-					local = folded
+	if parsed.zoneName != "" && (parsed.zoneName == local.StandardName || parsed.zoneName == local.DaylightName) {
+		if local.StandardOffset <= -86400 || local.StandardOffset >= 86400 || local.DaylightOffset <= -86400 || local.DaylightOffset >= 86400 {
+			return Result{}, ErrParse
+		}
+		useDaylight := false
+		if local.StandardOffset != local.DaylightOffset {
+			if local.IsDST == nil {
+				return Result{}, ErrParse
+			}
+			lookup := wall.Add(-time.Duration(local.StandardOffset) * time.Second)
+			naiveDST := local.IsDST(lookup)
+			ambiguous := !naiveDST && local.IsDST(lookup.Add(-time.Duration(local.DaylightOffset-local.StandardOffset)*time.Second))
+			useDaylight = naiveDST
+			if ambiguous {
+				useDaylight = !fold
+				if useDaylight && local.DaylightName != parsed.zoneName && local.StandardName == parsed.zoneName {
+					useDaylight, fold = false, true
 				}
 			}
-			localName, offset = local.Zone()
-			aware = true
-			if localName != parsed.zoneName && (parsed.zoneName == "UTC" || parsed.zoneName == "GMT" || parsed.zoneName == "Z" || parsed.zoneName == "z") {
-				offset = 0
-				location = time.UTC
-			} else {
-				location = local.Location()
-			}
 		}
+		localName := local.StandardName
+		offset = local.StandardOffset
+		if useDaylight {
+			localName, offset = local.DaylightName, local.DaylightOffset
+		}
+		if localName != parsed.zoneName && utcZone(parsed.zoneName) {
+			offset = 0
+		}
+		aware = true
 	}
 	if !aware && parsed.hasOffset {
 		if parsed.zoneOffset <= -86400 || parsed.zoneOffset >= 86400 {
 			return Result{}, ErrParse
 		}
 		offset, aware = parsed.zoneOffset, true
-		location = time.FixedZone(parsed.zoneName, offset)
-		if offset == 0 {
-			location = time.UTC
-		}
 	}
-	if aware {
-		location = time.FixedZone(parsed.zoneName, offset)
+	if !aware {
+		return Result{Time: wall, Fold: fold}, nil
 	}
+	location := time.FixedZone(parsed.zoneName, offset)
 	value := time.Date(wall.Year(), wall.Month(), wall.Day(), wall.Hour(), wall.Minute(), wall.Second(), wall.Nanosecond(), location)
-	return Result{Time: value, Aware: aware, Offset: time.Duration(offset) * time.Second}, nil
+	return Result{Time: value, Aware: aware, Offset: time.Duration(offset) * time.Second, Fold: fold}, nil
 }

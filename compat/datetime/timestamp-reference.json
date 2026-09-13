@@ -1,0 +1,7352 @@
+{
+  "python": "3.14.6",
+  "source_commit": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+  "source_sha256": "934a84bbfac41fc43c5c30e86338bf1c31cf282f5215945a4fc79801d1f01cf6",
+  "scope": "C datetime.timestamp: modern naive local times in UTC/EST5EDT, both folds, and aware full-range exact integer-microsecond division",
+  "cases": [
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135567978496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4739901135567978496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135567978504,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4739901135567978504,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135569014120,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4739901135569014120,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135576367096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4739901135576367096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576053149696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4741224576053149696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576053149704,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4741224576053149704,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576054185320,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4741224576054185320,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576061538296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4741224576061538296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59",
+      "fold": true,
+      "expected": {
+        "bits": 4744959218824511488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4744959218824511492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218825029300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4744959218825029300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4744959218828705788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4744959218828705792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4744959218828705796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218829223604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4744959218829223604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218832900092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4744959218832900092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378452992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00",
+      "fold": true,
+      "expected": {
+        "bits": 4744959226378452992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378452996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4744959226378452996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378970804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4744959226378970804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226382647292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4744959226382647292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928200192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4744959233928200192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928200196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4744959233928200196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928718004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4744959233928718004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233932394492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4744959233932394492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59",
+      "fold": true,
+      "expected": {
+        "bits": 4745045452037029888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4745045452037029892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037547700,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4745045452037547700,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224188,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4745045452041224188,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4745045452041224192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4745045452041224196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041742004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4745045452041742004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452045418492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4745045452045418492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459590971392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00",
+      "fold": true,
+      "expected": {
+        "bits": 4745045459590971392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459590971396,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4745045459590971396,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459591489204,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4745045459591489204,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459595165692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4745045459595165692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467140718592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4745045467140718592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467140718596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4745045467140718596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467141236404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4745045467141236404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467144912892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4745045467144912892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686143488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59",
+      "fold": true,
+      "expected": {
+        "bits": 4745291860686143488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686143492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4745291860686143492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686661300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4745291860686661300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860690337788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4745291860690337788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135567978496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4739900969473540096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4739901256363933696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135559589880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4739901860343709688,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135567978504,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4739900969473540104,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4739901256363933704,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135559589888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4739901860343709696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135569014120,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4739900969474575720,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4739901256364969320,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135560625504,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4739901860344745312,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135576367096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4739900969481928696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4739901256372322296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135567978479,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1995-01-01T00:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4739901860352098287,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576053149696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4741224409958711296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4741224696849104896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576044761080,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4741225300828880888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576053149704,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4741224409958711304,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4741224696849104904,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576044761088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4741225300828880896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576054185320,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4741224409959746920,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4741224696850140520,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576045796704,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4741225300829916512,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576061538296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4741224409967099896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4741224696857493496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576053149679,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2000-01-01T00:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4741225300837269487,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135777292288,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279222489088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218820317180,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581212377084,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135777292292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279222489092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218820317184,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581212377088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218825029300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135777810100,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279223006900,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218820834992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581212894896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135781486588,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279226683388,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511480,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T01:59:59.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581216571384,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135781486592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279226683392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511484,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581216571388,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135781486596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279226683396,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581216571392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218829223604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135782004404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279227201204,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218825029296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581217089200,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218832900092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135785680892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279230877692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705784,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581220765688,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378452992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959143331233792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959286776430592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226374258684,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959588766318588,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378452996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959143331233796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959286776430596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226374258688,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959588766318592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378970804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959143331751604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959286776948404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226374776496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959588766836400,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226382647292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959143335428092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959286780624892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378452984,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T02:30:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959588770512888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928200192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959150880980992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326177792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233924005884,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959596316065788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928200196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959150880980996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326177796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233924005888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959596316065792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928718004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959150881498804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326695604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233924523696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959596316583600,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233932394492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959150885175292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294330372092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928200184,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-03-10T03:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959596320260088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368989810688,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512435007488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452032835580,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814424895484,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368989810692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512435007492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452032835584,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814424895488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037547700,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368990328500,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512435525300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452033353392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814425413296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224188,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368994004988,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439201788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T00:59:59.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814429089784,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368994004992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439201792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029884,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814429089788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368994004996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439201796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814429089792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041742004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368994522804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439719604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037547696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814429607600,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452045418492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368998199292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512443396092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224184,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814433284088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459590971392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045376543752192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519988948992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459586777084,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045821978836988,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459590971396,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045376543752196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519988948996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459586777088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045821978836992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459591489204,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045376544270004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519989466804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459587294896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045821979354800,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459595165692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045376547946492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519993143292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459590971384,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T01:30:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045821983031288,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467140718592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045384093499392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045527538696192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467136524284,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045829528584188,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467140718596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045384093499396,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045527538696196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467136524288,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045829528584192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467141236404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045384094017204,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045527539214004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467137042096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045829529102000,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467144912892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045384097693692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045527542890492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467140718584,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2024-11-03T02:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045829532778488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686143488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745291777638924288,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921084121088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860681949180,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745292223074009084,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686143492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745291777638924292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921084121092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860681949184,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745292223074009088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686661300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745291777639442100,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921084638900,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860682466992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745292223074526896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860690337788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745291777643118588,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921088315388,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686143480,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2026-09-13T23:59:59.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745292223078203384,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929159680,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13991821082524385280,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 13991821078041722880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929290752,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 13991821068604538880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929159680,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13991821082524385280,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 13991821078041722880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929290752,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 13991821068604538880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929143498,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13991821082524369098,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 13991821078041706698,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929274571,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 13991821068604522699,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929028608,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13991821082524254208,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 13991821078041591808,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929159680,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "0001-01-01T00:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 13991821068604407808,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59Z",
+      "fold": false,
+      "expected": {
+        "bits": 13830554455654793216,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13894544108246007808,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4669141548292636672,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13835058057533963526,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4680673707281019793,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 13830554446647593961,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13894544108245732930,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4669141548293186428,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13835058055282163712,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4680673707281088512,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 13829442462863599912,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13894544074310680928,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4669141616163290431,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13834502063390166687,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4680673715764851512,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 13740701229962882445,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13894543833368375742,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4669142098047900804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13830554464661992471,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "1969-12-31T23:59:59.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4680673776000427809,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363934228480,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4755814353553326080,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4755814371483975680,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363933704191,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4755814409232711679,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363934228481,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4755814353553326081,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4755814371483975681,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363933704192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4755814409232711680,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363934293206,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4755814353553390806,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4755814371484040406,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363933768918,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4755814409232776406,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363934752767,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4755814353553850367,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4755814371484499967,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363934228479,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "2243-01-01T00:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4755814409233235967,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851193163776,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4764321846002712576,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4764321854968037376,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851192901632,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4764321873842405376,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851193163776,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4764321846002712576,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4764321854968037376,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851192901632,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4764321873842405376,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851193196139,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4764321846002744939,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4764321854968069739,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851192933995,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4764321873842437739,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851193425920,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4764321846002974720,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4764321854968299520,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851193163775,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "3000-01-01T00:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4764321873842667519,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59Z",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977936896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491329130496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4777615492449796096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977904128,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4777615494809092096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977936896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491329130496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4777615492449796096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977904128,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4777615494809092096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977940941,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491329134541,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4777615492449800141,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977908173,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4777615494809096141,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977969664,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491329163264,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4777615492449828864,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977936896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "UTC",
+      "input": "9999-12-31T23:59:59.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4777615494809124864,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4739901286562922496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4739901286562922496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4739901286562922504,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4739901286562922504,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4739901286563958120,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4739901286563958120,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4739901286571311096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4739901286571311096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4741224727048093696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4741224727048093696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4741224727048093704,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4741224727048093704,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4741224727049129320,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4741224727049129320,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4741224727056482296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4741224727056482296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294321983488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59",
+      "fold": true,
+      "expected": {
+        "bits": 4744959294321983488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294321983492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4744959294321983492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294322501300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4744959294322501300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326177788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4744959294326177788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326177792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4744959279226683392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326177796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4744959279226683396,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326695604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4744959279227201204,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294330372092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4744959279230877692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959301875924992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00",
+      "fold": true,
+      "expected": {
+        "bits": 4744959286776430592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959301875924996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4744959286776430596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4744959301876442804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4744959286776948404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959301880119292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4744959286780624892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326177792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4744959294326177792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326177796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4744959294326177796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326695604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4744959294326695604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294330372092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4744959294330372092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512435007488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59",
+      "fold": true,
+      "expected": {
+        "bits": 4745045512435007488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512435007492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4745045512435007492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512435525300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4745045512435525300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439201788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4745045512439201788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439201792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4745045527538696192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439201796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4745045527538696196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439719604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4745045527539214004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512443396092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4745045527542890492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519988948992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00",
+      "fold": true,
+      "expected": {
+        "bits": 4745045535088443392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519988948996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4745045535088443396,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519989466804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4745045535088961204,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519993143292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4745045535092637692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045542638190592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00",
+      "fold": true,
+      "expected": {
+        "bits": 4745045542638190592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045542638190596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4745045542638190596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4745045542638708404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4745045542638708404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045542642384892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4745045542642384892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921084121088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59",
+      "fold": true,
+      "expected": {
+        "bits": 4745291921084121088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921084121092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.000001",
+      "fold": true,
+      "expected": {
+        "bits": 4745291921084121092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.123456",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921084638900,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.123456",
+      "fold": true,
+      "expected": {
+        "bits": 4745291921084638900,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921088315388,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.999999",
+      "fold": true,
+      "expected": {
+        "bits": 4745291921088315388,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135567978496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4739900969473540096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4739901256363933696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135559589880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4739901860343709688,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135567978504,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4739900969473540104,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4739901256363933704,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135559589888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4739901860343709696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135569014120,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4739900969474575720,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4739901256364969320,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135560625504,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4739901860344745312,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135576367096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4739900969481928696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4739901256372322296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4739901135567978479,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1995-01-01T00:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4739901860352098287,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576053149696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4741224409958711296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4741224696849104896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576044761080,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4741225300828880888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576053149704,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4741224409958711304,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4741224696849104904,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576044761088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4741225300828880896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576054185320,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4741224409959746920,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4741224696850140520,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576045796704,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4741225300829916512,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576061538296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4741224409967099896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4741224696857493496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4741224576053149679,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2000-01-01T00:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4741225300837269487,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135777292288,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279222489088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218820317180,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581212377084,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135777292292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279222489092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218820317184,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581212377088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218825029300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135777810100,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279223006900,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218820834992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581212894896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135781486588,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279226683388,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511480,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T01:59:59.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581216571384,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135781486592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279226683392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511484,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581216571388,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135781486596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279226683396,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218824511488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581216571392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218829223604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135782004404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279227201204,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218825029296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581217089200,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218832900092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959135785680892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959279230877692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959218828705784,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959581220765688,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378452992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959143331233792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959286776430592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226374258684,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959588766318588,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378452996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959143331233796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959286776430596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226374258688,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959588766318592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378970804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959143331751604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959286776948404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226374776496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959588766836400,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226382647292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959143335428092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959286780624892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959226378452984,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T02:30:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959588770512888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928200192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959150880980992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326177792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233924005884,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959596316065788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928200196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959150880980996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326177796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233924005888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959596316065792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928718004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959150881498804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294326695604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233924523696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959596316583600,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233932394492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4744959150885175292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4744959294330372092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4744959233928200184,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-03-10T03:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4744959596320260088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368989810688,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512435007488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452032835580,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814424895484,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368989810692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512435007492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452032835584,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814424895488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037547700,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368990328500,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512435525300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452033353392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814425413296,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224188,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368994004988,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439201788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T00:59:59.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814429089784,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368994004992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439201792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029884,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814429089788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368994004996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439201796,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037029888,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814429089792,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041742004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368994522804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512439719604,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452037547696,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814429607600,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452045418492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045368998199292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045512443396092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045452041224184,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045814433284088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459590971392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045376543752192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519988948992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459586777084,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045821978836988,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459590971396,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045376543752196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519988948996,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459586777088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045821978836992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459591489204,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045376544270004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519989466804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459587294896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045821979354800,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459595165692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045376547946492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045519993143292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045459590971384,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T01:30:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045821983031288,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467140718592,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045384093499392,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045527538696192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467136524284,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045829528584188,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467140718596,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045384093499396,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045527538696196,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467136524288,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045829528584192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467141236404,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045384094017204,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045527539214004,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467137042096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045829529102000,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467144912892,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745045384097693692,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745045527542890492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745045467140718584,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2024-11-03T02:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745045829532778488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686143488,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745291777638924288,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921084121088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860681949180,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745292223074009084,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686143492,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745291777638924292,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921084121092,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860681949184,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745292223074009088,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686661300,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745291777639442100,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921084638900,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860682466992,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745292223074526896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860690337788,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4745291777643118588,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4745291921088315388,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4745291860686143480,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2026-09-13T23:59:59.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4745292223078203384,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929159680,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13991821082524385280,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 13991821078041722880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929290752,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 13991821068604538880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929159680,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13991821082524385280,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 13991821078041722880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929290752,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 13991821068604538880,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929143498,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13991821082524369098,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 13991821078041706698,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929274571,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 13991821068604522699,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929028608,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13991821082524254208,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 13991821078041591808,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13991821079929159680,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "0001-01-01T00:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 13991821068604407808,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59Z",
+      "fold": false,
+      "expected": {
+        "bits": 13830554455654793216,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13894544108246007808,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4669141548292636672,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13835058057533963526,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4680673707281019793,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 13830554446647593961,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13894544108245732930,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4669141548293186428,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13835058055282163712,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4680673707281088512,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 13829442462863599912,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13894544074310680928,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4669141616163290431,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13834502063390166687,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4680673715764851512,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 13740701229962882445,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 13894543833368375742,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4669142098047900804,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 13830554464661992471,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "1969-12-31T23:59:59.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4680673776000427809,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363934228480,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4755814353553326080,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4755814371483975680,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363933704191,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4755814409232711679,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363934228481,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4755814353553326081,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4755814371483975681,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363933704192,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4755814409232711680,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363934293206,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4755814353553390806,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4755814371484040406,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363933768918,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4755814409232776406,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363934752767,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4755814353553850367,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4755814371484499967,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4755814363934228479,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "2243-01-01T00:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4755814409233235967,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00Z",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851193163776,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4764321846002712576,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4764321854968037376,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851192901632,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4764321873842405376,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851193163776,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4764321846002712576,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4764321854968037376,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851192901632,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4764321873842405376,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851193196139,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4764321846002744939,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4764321854968069739,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851192933995,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4764321873842437739,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851193425920,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4764321846002974720,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4764321854968299520,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4764321851193163775,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "3000-01-01T00:00:00.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4764321873842667519,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59Z",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977936896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491329130496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4777615492449796096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977904128,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4777615494809092096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.000001Z",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977936896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.000001+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491329130496,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.000001-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4777615492449796096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.000001+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977904128,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.000001-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4777615494809092096,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.123456Z",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977940941,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.123456+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491329134541,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.123456-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4777615492449800141,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.123456+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977908173,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.123456-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4777615494809096141,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.999999Z",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977969664,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.999999+05:30",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491329163264,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.999999-04:00",
+      "fold": false,
+      "expected": {
+        "bits": 4777615492449828864,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.999999+00:00:01.000001",
+      "fold": false,
+      "expected": {
+        "bits": 4777615491977936896,
+        "error": ""
+      }
+    },
+    {
+      "zone": "America/New_York",
+      "input": "9999-12-31T23:59:59.999999-23:59:59.999999",
+      "fold": false,
+      "expected": {
+        "bits": 4777615494809124864,
+        "error": ""
+      }
+    }
+  ]
+}

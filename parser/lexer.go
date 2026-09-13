@@ -30,6 +30,10 @@ func IsSpace(value rune) bool {
 	return inRanges(value, spaceRanges)
 }
 
+func ASCIIDecimal(value string) (string, bool) {
+	return asciiDecimal(value)
+}
+
 func decimalDigit(value rune) (int, bool) {
 	index := sort.Search(len(decimalZeroes), func(index int) bool { return decimalZeroes[index]+9 >= value })
 	if index < len(decimalZeroes) && value >= decimalZeroes[index] {

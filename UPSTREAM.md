@@ -1,9 +1,10 @@
 # Upstream Compatibility
 
 Behavioral authority: python-dateutil **2.9.0.post0** under CPython **3.14.6**.
-The Go compatibility version is **2.9.0**, using module path
-`github.com/markusmobius/go-dateutil/v2`. This release implements only the
-documented parser and relative-arithmetic subset, not the complete upstream API.
+The Go compatibility version is **2.9.1**, using module path
+`github.com/markusmobius/go-dateutil/v2`. This release adds
+explicit parser context and CPython datetime compatibility, not the complete
+upstream API. Published tags remain unchanged.
 Upstream tag `2.9.0.post0` resolves to commit
 `1ae807774053c071acc9e7d3d27778fba0a7773e`.
 
@@ -14,6 +15,9 @@ Upstream tag `2.9.0.post0` resolves to commit
 | `dateutil/parser/_parser.py`: `_timelex` | `parser/lexer.go` | Python Unicode tokenization |
 | `_ymd`, `parserinfo`, `parser._parse`, `parser._build_naive`, `parser._build_tzaware` | `parser/dateutil.go` | Default English, `fuzzy=False`, no custom `tzinfos` |
 | `dateutil/relativedelta.py`: relative constructor fields, `_fix`, datetime addition | `relativedelta/relativedelta.go` | Relative units used by DateParser |
+| CPython `Modules/_datetimemodule.c`: `datetime_fromisoformat`, ISO date/time helpers, offset construction | `compat/datetime/iso.go` | HtmlDate's separate CPython ISO shortcut |
+| `_parser.py`: `_build_tzaware`, `_assign_tzname`; `dateutil/tz/tz.py`: `tzlocal` | `parser.ParseWithLocalTimezone` | Explicit environment names/offsets/DST lookup and default fold |
+| CPython `datetime_timestamp`, `local_to_seconds`, `delta_total_seconds` | `compat/datetime/timestamp.go` | Aware and naive timestamps used by HtmlDate's bounds validation |
 
 Source SHA-256 pins:
 
@@ -27,14 +31,168 @@ Parser input cases were initially extracted from the Go HtmlDate comparison
 corpus and supplemented with direct parser edge cases. All expected token
 streams, datetimes, and rejections come from Python, never from Go or Rust.
 ISO-parser expectations have been removed: CPython ISO parsing belongs to a
-separate compatibility surface.
+separate compatibility surface. Its new oracle is stored separately in
+`compat/datetime/reference.json`; the original Dateutil fixtures are unchanged.
+
+## Combined Consumer Audit
+
+Both shared ports own the union of Dateutil operations required by the native
+HtmlDate and DateParser contracts. Consumers must not implement substitute
+parsers, relative arithmetic, or CPython compatibility algorithms. This inventory
+distinguishes dependency coverage from consumer integration: the latter is not
+established by passing the standalone library tests.
+
+The audit checked every installed HtmlDate Python module against upstream
+**1.10.0**, commit `b8952828329abaeeb3be21387b526f2be614ce67`: all eight match
+after CRLF-to-LF normalization. The four DateParser modules containing Dateutil
+references match **1.4.3**, commit `9ce60b1958f1b285886bcfbb743f6419feacfc92`.
+
+Relevant source SHA-256 values, normalized to LF:
+
+| Source | SHA-256 |
+| --- | --- |
+| HtmlDate `extractors.py` | `389685498353db3a9b5235b394e6221171ac1075b89467fb1798e510a534111e` |
+| HtmlDate `validators.py` | `37c8a952e5b240c24ee75765e76a6faabb692209e11528b0da22411531264900` |
+| HtmlDate `settings.py` | `e803e13bb05d958a208c06ad24e06958edf634571f637bd301d2871bb8efb3ef` |
+| HtmlDate `core.py` | `a77ff0dcd3533da0a64c1fde9cf100e5665b93836acb0e3a1e8204a3f80e9d03` |
+| DateParser `date.py` | `d737ed85367ba3a7ccb9f720f05f02b5c31fde1416e90c02c51aeebe94227946` |
+| DateParser `freshness_date_parser.py` | `3376ca16b8bb56fad1ae8cbc9a44cf76dbbd586a4987cc1616443e26e6f8a676` |
+| DateParser `languages/locale.py` | `fd5a8dfeb133ff7480aabc6b8e4d0af2dfa0713045cd052bd32b1ba9b5969a7d` |
+| DateParser `utils/time_spans.py` | `f032d5454ee233fbf9b4986e61d8e139a4c7d8cc6ba20b97a2bc7168951fdfe1` |
+
+### Required Operations
+
+| Python call or dependency | Required contract | Shared Go surface | Evidence |
+| --- | --- | --- | --- |
+| HtmlDate `custom_parse`: `dateutil_parse(string, fuzzy=False)` | Default English parser; `dayfirst=False`, `yearfirst=False`, `ignoretz=False`, no custom `tzinfos`; preserve wall fields, awareness, offset and fold; reject invalid explicit fields | `parser.ParseWithLocalTimezone` | 3,273 original parser cases and 2,804 context cases |
+| Dateutil `_build_naive` | Default local calendar day at midnight; omitted fields inherit, omitted day clamps; weekday-only adjustment; parser initialization year independent of clock; default fold inherited unless weekday arithmetic resets it | Same parser API; explicit default datetime/year/fold | Context matrix varies month ends, leap years, year window, non-midnight defaults and folds |
+| Dateutil `_build_tzaware` and `tzlocal` | Local names and standard/daylight offsets are environment snapshots, not historical IANA offsets; DST lookup remains historical; unknown names remain naive; numeric offsets and UTC preserved | `parser.LocalTimezone`; shared local-name/fold algorithm | Ten environments, including Windows long names, negative DST and historical offset changes |
+| HtmlDate `custom_parse`: `datetime.fromisoformat` | CPython ISO calendar/week dates, clocks, offsets, fractions, midnight rollover and rejection | `compat/datetime.FromISOFormat` | 6,944 C-Python outcomes |
+| HtmlDate `check_date_input`: `datetime.fromisoformat` | The same ISO operation for string min/max bounds; invalid strings use the supplied default, never Dateutil fallback | Same ISO API | ISO fixture; native bounds API mapping is a consumer gate |
+| HtmlDate `is_valid_date`: `datetime.timestamp` | Naive local-time resolution with fold; aware offset subtraction; CPython floating-point rounding | `compat/datetime.Timestamp` | 816 exact IEEE-754 results, including fractional offsets and both folds |
+| Python digit/space classification and compact integer fields | Unicode-16 `isdigit`, empty-string false, character slicing; decimal digits are narrower than `isdigit` | `parser.IsDigit`, `IsDigits`, `IsSpace`, `ASCIIDecimal` | Pinned Unicode tables, lexer corpus and Unicode helper regression |
+| DateParser freshness parsing | Sign resolution and decade folding precede relative constructor; relative years/months/weeks/days/hours/minutes/seconds; microsecond rounding and range errors | `relativedelta.Delta.Apply` | 146 shared arithmetic cases plus DateParser's separately qualified integration fixtures |
+| DateParser month time spans | Singular month uses configured relative days; plural months use calendar months; past/future signs preserved | Same relative API | Arithmetic and DateParser time-span fixtures |
+
+`Timestamp` takes the fold separately: use `Result.Fold` for Dateutil results
+and `false` for `FromISOFormat` results. `Result.Instant` leaves naive wall values
+unchanged and is **not** a substitute for local naive `datetime.timestamp`.
+The timestamp oracle uses the actual pinned C runtime. Its naive cases cover
+modern UTC/US Eastern dates; aware cases cover years 1 through 9999. Native
+timezone database differences and platform-specific `localtime` range errors
+outside those naive dates are not claimed equivalent.
+
+The context generator executes unmodified `_parser.py` and `tzlocal` with
+explicit time-module snapshots. Historical `localtime` DST flags come from
+`tzdata==2026.3`, including negative DST. The `tzlocal` source SHA-256 is
+`1149c474c7de4e15e263a978b21f7205a6d9eb7fcf3b3cb4d734ac87db619f5a`.
+An independent run against actual POSIX environments matched all 1,272
+corresponding original fold-zero cases. Windows long names intentionally do not
+make `EST`/`EDT` known names. `Parse` is a convenience wrapper deriving seasonal
+context from the default's Go location with fold zero; exact environment replay
+must use `ParseWithLocalTimezone`, not inferred timezone names or UTC defaults.
+
+### Consumer Control Flow
+
+These decisions remain in HtmlDate, not in the shared parsers:
+
+1. `custom_parse` enters the shortcut only when `string[:4].isdigit()`.
+  Python slices are characters and may be shorter than four characters.
+2. If `string[4:8].isdigit()`, construct the first eight characters' calendar
+  date. Failure does not enter the ISO/Dateutil branch. Unicode decimal digits
+  are accepted by `int`; superscript digits can satisfy `isdigit` but fail it.
+3. Otherwise try CPython ISO, and call Dateutil **only on ISO ValueError**.
+  A successfully parsed but out-of-bounds ISO value must not trigger Dateutil.
+4. Validate the candidate before formatting: first the candidate's wall year,
+  then inclusive earliest/candidate/latest floating-point timestamps. Preserve
+  the candidate's wall calendar date in the output, not its UTC date.
+5. Continue compact-date, YMD/DMY, year-month and textual regex stages after
+  failure. Only then, if extensive search and the text pattern permit it, use
+  external DateParser. That path formats the result before bounds validation.
+
+External DateParser uses only `custom-formats` and `absolute-time`, with
+normalization, strict parsing, preferred past dates, locale date order, and
+timezone-naive output. It does not substitute for Dateutil, and HtmlDate does
+not enable DateParser's relative parser on this path.
+
+`try_date_expr` trims, truncates to 52 characters, requires 4..18 Python digit
+characters, and applies discard patterns. It has no additional six-character
+minimum at that function boundary. `MIN_SEGMENT_LEN` belongs to other callers.
+The default lower bound is naive 1995-01-01. The default upper bound is the
+current **local** day at 23:59:59.999999. Neither is implicitly UTC. Bounds
+provided as Python datetimes retain their awareness and fold.
+
+`strftime`/`strptime`, `fromtimestamp`, the integer reference ranking helpers,
+regex selection and HTML traversal are not Dateutil calls. The native HtmlDate
+APIs return typed dates, accept typed bounds and do not expose arbitrary Python
+output formats or string-bound parameters. Their typed-bound mapping, local
+timestamp conversion, truncation toward zero for integer references, and
+format/parse order still require consumer tests. This is not a claim to port
+the entire CPython datetime public API into this dependency.
+
+### Explicit Exclusions
+
+Neither consumer calls Dateutil `isoparse`/`isoparser`, recurrence, Easter,
+fuzzy parsing, or custom `tzinfos`. `Locale.to_parserinfo` is an unused Python
+class factory, not a native runtime dependency.
+
+Python DateParser's `date_range` and `get_intersecting_periods` have no calls in
+either package's parsing runtime and no public counterpart in the current
+native ports. Their normal relative steps fit `Delta`, but **the entire
+`date_range(**kwargs)` contract is not covered**: it can forward absolute
+microsecond, weekday, leapday and ordinal options. Porting those helpers would
+first require the missing operations here and in Rust-Dateutil, never consumer
+substitutes. Earlier documentation implying full helper coverage was incorrect.
+
+### Consumer Integration Gates
+
+The audit found and corrected naive-gap normalization, missing exact local
+environment/fold state, and missing shared timestamp conversion in v2.9.1.
+ISO-only qualification was insufficient. Original v2.9.0 fixtures
+and published tags are retained unchanged.
+
+Go-HtmlDate still uses the published v2.9.0 parser convenience call and has not
+been switched to these v2.9.1 APIs. Before claiming consumer parity, verify
+shortcut/fallback ordering, Unicode slicing, default-clock/parser-year/fold
+mapping, typed bounds, wall-year versus instant bounds, local end-of-day defaults,
+and formatted external-parser validation against Python. The existing ISO-week
+consumer regression remains a required integration check, not a waived failure.
+Standalone tests do not certify those caller decisions. Rust-HtmlDate follows
+only after the Go/Python gate. No HtmlDate release is authorized before review.
+
+## CPython ISO Compatibility
+
+The separately named `compat/datetime.FromISOFormat` operation is derived from
+CPython **3.14.6**, commit `c63aec69bd59c55314c06c23f4c22c03de76fe45`.
+It is included in the shared dependency to keep compatibility code and its
+provenance out of consumers, not presented as a Python-dateutil API.
+
+Source SHA-256 pins:
+
+- `Modules/_datetimemodule.c`: `934a84bbfac41fc43c5c30e86338bf1c31cf282f5215945a4fc79801d1f01cf6`
+- `Lib/_pydatetime.py`: `2110f90af43143761566480888666874549b2a8996af947fa55fec12fc359cca`
+- `Lib/test/datetimetester.py`: `821d59dcafac9d0e88440914494e94a9f61f764727404bf7a8d74f6a6673eb09`
+- `LICENSE`: `b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231`
+
+The 6,944 independently generated results compare wall fields, microseconds,
+awareness, exact offset microseconds, instants, and rejections. Inputs combine
+the unchanged Dateutil corpus, literals in upstream `fromisoformat` tests, and a
+deterministic boundary matrix. All valid-UTF-8 inputs are retained; four lone
+surrogate examples are listed explicitly as unrepresentable by this API.
+
+The C implementation is authoritative, including the order of midnight
+normalization and final range validation, ignored fractional offsets when the
+whole-second offset is zero, and its handling of trailing characters. A generic
+ISO parser or the pure-Python fallback is not silently substituted.
 
 ## API Boundaries
 
 The caller provides a default datetime and parser initialization year separately,
 matching Python's distinct default-clock and `parserinfo` year semantics.
 Results expose offset awareness separately because Go times always have a
-location. Python errors become Go errors; Python warning delivery and exception
+location. Naive results use UTC to carry wall fields without local normalization,
+not to assert UTC awareness. Fold is retained separately. Python errors become
+Go errors; Python warning delivery and exception
 wording are not reproduced. Unknown dateutil timezone names retain naive parsing
 rather than being assigned invented offsets.
 
