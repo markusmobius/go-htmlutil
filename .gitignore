@@ -1,0 +1,20 @@
+# Build outputs
+/bin/
+/dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Test coverage and profiling
+*.out
+*.coverprofile
+coverage.*
+*.prof
+*.pprof
+
+# Local Go workspaces
+go.work
+go.work.sum

@@ -1,0 +1,6 @@
+/go.mod text eol=lf
+*.go text eol=lf
+*.py text eol=lf
+/parser/reference.json -text
+/relativedelta/reference.json -text
+/LICENSE -text
